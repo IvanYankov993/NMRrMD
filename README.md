@@ -4,11 +4,17 @@ NMRrMD is a versatile scripting workflow designed to automate the process of bio
 
 - **NMR Restraint Calculation**: Powered by Mardigras, it computes NMR restraints to guide the structural modeling process.
 - **NMR-Restraint MD Simulation**: Utilizes Amber to perform NMR-restraint-driven MD simulations, offering high fidelity in structure prediction.
+## Features
 
-## Key Features
-
-- **Parallel Computing**: Leverages GNU Parallel for restraint calculations, enabling an 8x speed-up for large datasets.
-- **GPU-Accelerated MD**: Supports GPU acceleration via PMEMD.CUDA for Amber users with appropriate licenses, significantly improving simulation efficiency.
+- **NMR Restraint Calculation**: Powered by MARDIGRAS, it computes NMR distance restraints from experimental 2D NOESY data, facilitating high-quality structural modeling.
+- **NMR-Restraint MD Simulation**: Uses Amber to perform NMR-restraint-driven MD simulations for accurate structure prediction.
+- **Batch Calculation Mode**: Supports batch processing of multiple NMR experiments with different mixing times (100-400ms).
+- **3DNA Parameters Reporting**: Outputs 3DNA parameters using cpptraj, including PA dihedral angles (requires specific nomenclature).
+- **Refinement Options**: Allows for the refinement of the starting model through a user-specified number of cycles (default is 3).
+- **Starting Conformer Selection**: Selects the 5 conformers with the lowest restraint energy penalties.
+- **NMR Distance Restraint Visualization**: Features a function for visualizing NMR distance restraints in ChimeraX (currently under development).
+- **Parallel Computing**: Accelerates MARDIGRAS calculations using GNU Parallel (requires separate installation), providing a significant speed-up in restraint calculations.
+- **GPU Acceleration**: Supports PMEMD.CUDA for Amber users with GPU licenses, speeding up MD simulations.
 
 ## Applications
 
