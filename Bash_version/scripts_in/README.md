@@ -9,6 +9,9 @@ This repository provides a comprehensive set of instructions and scripts to faci
 
 The molecular dynamics workflow begins with a template DNA-ligand complex and a ligand PDB file, generating multiple conformations for downstream analysis. The NMR-derived restraints are then applied during simulated annealing, allowing the selection of conformers with the lowest restraint energy penalties. Finally, production simulations and analysis are performed.
 
+
+![Workflow Diagram](../../doc/MD%20flowchart.png)
+
 The figure above highlights the following key components:
 
 - **White Boxes:** Input and output files.
