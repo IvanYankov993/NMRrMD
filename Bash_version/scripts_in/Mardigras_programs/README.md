@@ -8,7 +8,7 @@ This repository provides scripts and instruction files for performing NMR-restra
 
 Below is the workflow diagram illustrating the steps involved in the MARDIGRAS computation process:
 
-![MARDIGRAS Workflow](../../doc/NMR%20restraints%20flowchart.png)
+![MARDIGRAS Workflow](../../../doc/NMR%20restraints%20flowchart.png)
 
 ### Process Description
 1. **Independent Starting Points**:
