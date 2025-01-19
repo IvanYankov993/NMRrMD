@@ -80,6 +80,7 @@ GNU Parallel is used to optimize MARDIGRAS calculations by running multiple proc
 
 ```bash
 parallel -j <num_cores> mardigras ::: <list_of_parm_files>
+```
 
 # Example
 For 15 calculations, GNU Parallel reduces computation time significantly compared to sequential execution.
