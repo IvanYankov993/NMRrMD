@@ -1,27 +1,24 @@
-# NMR-MD Workflow Repository
+# NMRrMD: A Functional-Style Scripting Workflow for Biomolecule-Ligand NMR-Informed MD Structure Determination
 
-## Overview
+NMRrMD is a versatile scripting workflow designed to automate the process of biomolecule-ligand NMR-informed molecular dynamics (MD) structure determination. The workflow seamlessly integrates:
 
-This repository provides an automated workflow for NMR-Mardigras-Molecular Dynamics (MD) simulations. It has been successfully applied in the determination of DNA-ligand and dsDNA structures, particularly in chemical biology labs. The workflow is well-documented and ready for further integration with tools like AmberTools, Python scripts, or NMR software for broader applications.
+- **NMR Restraint Calculation**: Powered by Mardigras, it computes NMR restraints to guide the structural modeling process.
+- **NMR-Restraint MD Simulation**: Utilizes Amber to perform NMR-restraint-driven MD simulations, offering high fidelity in structure prediction.
+## Features
 
-## Workflow Diagram
-
-The figure below provides an overview of the compiled automated workflow:
-
-![Workflow Diagram](path_to_image.png)
-
-**Figure:** Required input files include a list of intensities (`.lst`) and template model (`.pdb`). User-defined files are shown in **red** (e.g., `pseudo.inp`, `filter.list`, and `Template.PARAM`). To begin, execute the `run.sh` script with `./run.sh`. The program prompts for four variables, highlighted in **black**. It calls a library of scripts, including Bash, Expect, Mardigras, AmberTools, and Amber programs, which must be pre-installed.
-
----
+- **NMR Restraint Calculation**: Powered by MARDIGRAS, it computes NMR distance restraints from experimental 2D NOESY data, facilitating high-quality structural modeling.
+- **NMR-Restraint MD Simulation**: Uses Amber to perform NMR-restraint-driven MD simulations for accurate structure prediction.
+- **Batch Calculation Mode**: Supports batch processing of multiple NMR experiments with different mixing times (100-400ms).
+- **3DNA Parameters Reporting**: Outputs 3DNA parameters using cpptraj, including PA dihedral angles (requires specific nomenclature).
+- **Refinement Options**: Allows for the refinement of the starting model through a user-specified number of cycles (default is 3).
+- **Starting Conformer Selection**: Selects the 5 conformers with the lowest restraint energy penalties.
+- **NMR Distance Restraint Visualization**: Features a function for visualizing NMR distance restraints in ChimeraX (currently under development).
+- **Parallel Computing**: Accelerates MARDIGRAS calculations using GNU Parallel (requires separate installation), providing a significant speed-up in restraint calculations.
+- **GPU Acceleration**: Supports PMEMD.CUDA for Amber users with GPU licenses, speeding up MD simulations.
 
 ## Applications
 
-The workflow has been successfully applied to:
-- Determining DNA-ligand and dsDNA structures.
-- Chemical biology experiments involving complex molecular dynamics.
-- Producing results that are primed for refactoring into broader applications.
-
----
+The workflow has been successfully applied in the determination of DNA-ligand and dsDNA structures in a chemical biology lab setting. It is well-documented and primed for future refactoring, with potential for integration into tools such as AmberTools, Python-based scripts, or NMR software for broader applications.
 
 ## Installation and Setup
 
@@ -69,58 +66,10 @@ To run the demo tutorial, follow these steps:
 
 The executable will create a directory called `GTAC_iPr` containing all Mardi and MD calculations, along with a log file for intermediate outputs.
 
-## Description of the Executable Script
-
-### `Demo_NMR_MD_IY.sh`
-
-The script requires the following **user input**:
-- **(NamePA, NameDNA, runN)**:
-  - `runN`: Set to `0` if recycling the initial template is not needed.
-
----
-
-### Key Steps in the Script:
-
-#### 1. Initialization of Global Variables:
-- Examples: `NameDNA`, `NamePA`, `AmberRun`, and `WFPATH`.
-
-#### 2. Library Calls:
-- **`Library_T17.sh`**: Functions include `worktree`, `select_5`, and `mardigras_calculations`.
-- **`Library_toggle_scripts.sh`**: Functions include `confsampling`, `annealing`, `production`, etc.
-- **`Library_tleap.sh`**: Parameter initialization and solvation functions.
-- **`Library_cpptraj.sh`**: Clustering and 3DNA functions.
-- **`Library_MD.sh`**: Functions for molecular dynamics.
-
-#### 3. Execution Flow:
-- **Worktree**: Creates directories and subdirectories.
-- **Mardigras Calculations**: Generates `.rest` and other Mardigras files.
-- **Conformational Sampling**: Solvates and clusters starting structures.
-- **Annealing**: Applies restraints and generates energy-ranked files.
-- **Production Simulations**: Runs MD simulations.
-- **Analysis**: Generates final ensembles with dihedrals and 3DNA parameters.
-
-#### 4. Logical Conditions:
-- Automatically selects the Amber engine (`pmemd.cuda` or `sander`) based on system configuration.
-- Uses **GNU Parallel** for efficient Mardigras calculations.
-
----
-
-### Key Functions:
-
-#### `select_5`:
-- Filters and ranks energy penalties.
-- Generates arrays for selected file processing.
-
-#### `recycling`:
-- Reuses templates for iterative improvements.
-
----
-
 ## Contributing
 
-Contributions are welcome! Feel free to submit:
-- Issues and bug reports
-- Pull requests to add features or refactor code
+Feel free to submit issues, bug reports, or pull requests. Contributions are welcome to help improve the workflow, add features, or refactor code for broader applications.
+
 
 ## License
 
