@@ -1,0 +1,3 @@
+doc/*.pdf filter=lfs diff=lfs merge=lfs -text
+doc/*.png filter=lfs diff=lfs merge=lfs -text
+Bash_version/inp/* filter=lfs diff=lfs merge=lfs -text
