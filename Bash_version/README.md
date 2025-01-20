@@ -8,7 +8,7 @@ This repository provides an automated workflow for NMR-Mardigras-Molecular Dynam
 
 The figure below provides an overview of the compiled automated workflow:
 
-![Workflow Diagram](../doc/Exe%20flowchart.png)
+![Workflow Diagram](../doc/Exe%20flowchart.png) ![nOe restrained MD cofnromation](../doc/nOe_restrained_MD_conformation.gif)
 
 **Figure:** Required input files include a list of intensities (`.lst`) and template model (`.pdb`). User-defined files are shown in **red** (e.g., `pseudo.inp`, `filter.list`, and `Template.PARAM`). To begin, execute the `run.sh` script with `./run.sh`. The program prompts for four variables, highlighted in **black**. It calls a library of scripts, including Bash, Expect, Mardigras, AmberTools, and Amber programs, which must be pre-installed.
 
