@@ -1,6 +1,6 @@
 # NMRrMD: A Functional-Style Scripting Workflow for Biomolecule-Ligand NMR-Informed MD Structure Determination
 
-NMRrMD is a scripting workflow designed to automate the process of biomolecule-ligand NMR-informed molecular dynamics (MD) structure determination. The workflow seamlessly integrates:
+NMRrMD is a scripting workflow designed to automate the process of biomolecule-ligand NMR-informed molecular dynamics (MD) structure determination. The workflow integrates:
 
 - **NMR Restraint Calculation**: Powered by Mardigras, it computes NMR restraints to guide the structural modeling process.
 - **NMR-Restraint MD Simulation**: Utilizes Amber to perform NMR-restraint-driven MD simulations, offering high fidelity in structure prediction.
